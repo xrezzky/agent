@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============ Fondasi visual (identitas sendiri, bukan salinan merek) ============ */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @apply bg-ink-50 text-ink-900 antialiased;
+}
+
+html.dark body {
+  @apply bg-ink-900 text-ink-100;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: theme("colors.ink.300") transparent;
+}
+
+html.dark * {
+  scrollbar-color: theme("colors.ink.700") transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-ink-300;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  @apply bg-ink-700;
+}
+
+/* ============ Markdown ============ */
+
+.prose-chat {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  word-break: break-word;
+}
+
+.prose-chat p {
+  @apply my-2.5;
+}
+
+.prose-chat h1,
+.prose-chat h2,
+.prose-chat h3,
+.prose-chat h4 {
+  @apply mt-5 mb-2.5 font-semibold tracking-[-0.01em];
+}
+
+.prose-chat h1 { @apply text-xl; }
+.prose-chat h2 { @apply text-lg; }
+.prose-chat h3 { @apply text-base; }
+
+.prose-chat ul {
+  @apply my-2.5 list-disc space-y-1 pl-5;
+}
+
+.prose-chat ol {
+  @apply my-2.5 list-decimal space-y-1 pl-5;
+}
+
+.prose-chat li > p {
+  @apply my-0;
+}
+
+.prose-chat a {
+  @apply text-accent-600 underline decoration-accent-400/60 underline-offset-2 hover:decoration-accent-600;
+}
+
+html.dark .prose-chat a {
+  @apply text-accent-300;
+}
+
+.prose-chat blockquote {
+  @apply my-3 border-l-2 border-ink-300 pl-3 text-ink-500 italic;
+}
+
+html.dark .prose-chat blockquote {
+  @apply border-ink-700 text-ink-300;
+}
+
+.prose-chat table {
+  @apply my-3 w-full border-collapse overflow-hidden rounded-md border border-ink-200 text-sm;
+}
+
+html.dark .prose-chat table {
+  @apply border-ink-800;
+}
+
+.prose-chat th,
+.prose-chat td {
+  @apply border border-ink-200 px-2.5 py-1.5 text-left align-top;
+}
+
+html.dark .prose-chat th,
+html.dark .prose-chat td {
+  @apply border-ink-800;
+}
+
+.prose-chat th {
+  @apply bg-ink-100 font-semibold;
+}
+
+html.dark .prose-chat th {
+  @apply bg-ink-850;
+}
+
+.prose-chat hr {
+  @apply my-4 border-ink-200;
+}
+
+html.dark .prose-chat hr {
+  @apply border-ink-800;
+}
+
+.prose-chat :not(pre) > code {
+  @apply rounded-md bg-ink-200/70 px-1.5 py-0.5 font-mono text-[0.85em];
+}
+
+html.dark .prose-chat :not(pre) > code {
+  @apply bg-ink-800;
+}
+
+.prose-chat pre {
+  @apply my-3 overflow-x-auto rounded-xl p-0;
+}
+
+.prose-chat pre code {
+  @apply block bg-transparent p-0 font-mono text-[0.85rem] leading-relaxed;
+}
+
+/* Tema highlight.js menyesuaikan mode terang/gelap via class <html>. */
+html.light .hljs { background: #f6f6f4; color: #24292e; }
+html.light .hljs-comment { color: #6a737d; }
+html.light .hljs-keyword,
+html.light .hljs-selector-tag,
+html.light .hljs-tag { color: #d73a49; }
+html.light .hljs-string,
+html.light .hljs-attr { color: #032f62; }
+html.light .hljs-number,
+html.light .hljs-literal { color: #005cc5; }
+html.light .hljs-title,
+html.light .hljs-function,
+html.light .hljs-name { color: #6f42c1; }
+html.light .hljs-built_in { color: #e36209; }
+
+html.dark .hljs {
+  background: #141413;
+  color: #d4d4d4;
+}
+html.dark .hljs-comment { color: #6a737d; }
+html.dark .hljs-keyword,
+html.dark .hljs-selector-tag,
+html.dark .hljs-tag { color: #f4737a; }
+html.dark .hljs-string { color: #96e574; }
+html.dark .hljs-attr { color: #7cc7ff; }
+html.dark .hljs-number,
+html.dark .hljs-literal { color: #79b8ff; }
+html.dark .hljs-title,
+html.dark .hljs-function,
+html.dark .hljs-name { color: #d2a8ff; }
+html.dark .hljs-built_in { color: #ffab70; }
+
+/* ============ Utilitas ============ */
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

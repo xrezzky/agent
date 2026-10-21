@@ -1,0 +1,16 @@
+# Kredensial & artefak build
+node_modules
+.next
+out
+next-env.d.ts
+*.tsbuildinfo
+.env
+.env.local
+.env.production
+.DS_Store
+npm-debug.log*
+*.log
+# ZIP hasil kemasan tidak ikut ke repo
+*.zip
+# Data pengguna saat pengujian lokal
+/.data
